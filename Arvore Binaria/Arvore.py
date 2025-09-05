@@ -28,4 +28,5 @@ class Tree:
                         anterior.direita = novo
                         return
     
-
+    def buscar(self, chave):
+        
