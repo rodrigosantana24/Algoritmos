@@ -54,3 +54,20 @@ class Tree:
             sucessor.direita = apaga.direita
         return sucessor
     
+    def remover(self, valor):
+        if self.raiz == None:
+            return False
+        atual = self.raiz
+        pai = self.raiz
+        filho_esquerdo = True
+        while atual.item != valor:
+            pai = atual
+            if valor < atual.item:
+                filho_esquerdo = True
+                atual = atual.esquerda
+            else:
+                filho_esquerdo = False
+                atual = atual.direita
+            if atual == None:
+                return False
+
