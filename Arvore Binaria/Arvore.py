@@ -118,4 +118,20 @@ class Tree:
             precessor.esquerda = no.esquerda
         return precessor
 
+    def min(self):
+        atual = self.raiz
+        anterior = None
+        while atual != None:
+            anterior = atual
+            atual = atual.esquerda
+        return anterior
+    
+    def max(self):
+        atual = self.root
+        anterior = None
+        while atual != None:
+            anterior = atual
+            atual = atual.dir
+        return anterior
+
 
