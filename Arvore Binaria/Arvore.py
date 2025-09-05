@@ -1,10 +1,10 @@
 class No:
-    def __init__(self, chave, esquerda, direita):
+    def __init__(self, chave, esquerda=None, direita=None):
         self.item = chave
         self.esquerda = esquerda
         self.direita = direita
     
-class Tree:
+class ArvoreBinaria:
     def __init__(self):
         self.raiz = None
     
@@ -127,11 +127,11 @@ class Tree:
         return anterior
     
     def max(self):
-        atual = self.root
+        atual = self.raiz
         anterior = None
         while atual != None:
             anterior = atual
-            atual = atual.dir
+            atual = atual.direita
         return anterior
 
 
