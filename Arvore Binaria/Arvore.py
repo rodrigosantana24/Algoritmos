@@ -29,4 +29,28 @@ class Tree:
                         return
     
     def buscar(self, chave):
-        
+        if self.raiz == None:
+            return None
+        atual = self.raiz
+        while atual.item != chave:
+            if chave < atual.item:
+                atual = atual.esquerda
+            else:
+                atual = atual.direita
+            if atual == None:
+                return None
+        return atual
+    
+    def sucessor(self, apaga):
+        paidosucessor = apaga
+        sucessor = apaga
+        atual = apaga.direita
+        while atual != None:
+            paidosucessor = sucessor
+            sucessor = atual
+            atual = atual.esquerda
+        if sucessor != apaga.direita:
+            paidosucessor.esquerda = sucessor.direita
+            sucessor.direita = apaga.direita
+        return sucessor
+    
