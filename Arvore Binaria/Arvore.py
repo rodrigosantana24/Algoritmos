@@ -1,6 +1,6 @@
 class No:
-    def __init__(self, chave, esquerda=None, direita=None):
-        self.item = chave
+    def __init__(self, valor, esquerda=None, direita=None):
+        self.item = valor
         self.esquerda = esquerda
         self.direita = direita
     
@@ -133,5 +133,14 @@ class ArvoreBinaria:
             anterior = atual
             atual = atual.direita
         return anterior
-
-
+    
+    def encontrar_repetidos(self, lista):
+        arvore = ArvoreBinaria()
+        repetidos = set()
+        for num in lista:
+            if arvore.buscar(num) is not None:
+                if num not in repetidos:
+                    repetidos.add(num)
+            else:
+                arvore.inserir(num)
+        return list(repetidos)
