@@ -134,7 +134,8 @@ class ArvoreBinaria:
             atual = atual.direita
         return anterior
     
-    def encontrar_repetidos(self, lista):
+    @staticmethod
+    def encontrar_repetidos(lista):
         arvore = ArvoreBinaria()
         repetidos = set()
         for num in lista:
